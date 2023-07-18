@@ -1,0 +1,19 @@
+{% extends 'betajob/basic.html' %}
+{% block body %}
+<div class="container">
+    <h1 class="ff mt-3 mb-3 text-center">Your Dashboard</h1>
+    <h2 class="ff mt-3 mb-3">Jobs Posted</h2>
+        {% for job in jobs %}
+        <div class="card mb-3">
+            <div class="card-body">
+              <h4 class="card-title f fw-bold">{{ job.designation }}</h4>
+              <h6 class="card-title f fw-bold mb-3">{{ job.company }}</h6>
+              <p class="card-text f">{{ job.summary }}</p>
+              <strong class="card-text f">Skills required: {{ job.skills }}</strong>
+            </div>
+        </div>
+        {% empty %}
+        <h5 class="f">No Posted Jobs</h5>
+        {% endfor %}
+</div>
+{% endblock %}

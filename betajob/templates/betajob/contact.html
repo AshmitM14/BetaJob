@@ -1,0 +1,20 @@
+{% extends 'betajob/basic.html' %}
+{% block body %}
+<div class="container">
+    <h1 class="ff mt-3 mb-3">Contact Us</h1>
+    <form action="/contactHandle/" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="pTitlef" class="form-label f">Enter Email:</label>
+        <input type="textarea" placeholder="name@example.com" name="mail" class="form-control" autocomplete="off" id="pTitle"
+          aria-describedby="emailHelp" required>
+      </div>
+      <div class="mb-3">
+        <label for="pdesc" class="form-label f">Enter Message:</label>
+        <textarea name="mssg" class="form-control" autocomplete="off" id="pJobDesc" style="height: 20em;"
+          required></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Contact</button>
+    </form>
+  </div>
+{% endblock %}

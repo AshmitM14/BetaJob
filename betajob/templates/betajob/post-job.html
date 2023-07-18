@@ -1,0 +1,40 @@
+{% extends 'betajob/basic.html' %}
+{% block body %}
+<div class="container">
+  <h1 class="ff mt-3 mb-3">Post Job</h1>
+  <form action="/post/" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="pTitlef" class="form-label f">Enter Email:</label>
+      <input type="email" name="mail" class="form-control" autocomplete="off" id="pTitle"
+        aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="pTitlef" class="form-label f">Enter Company Name:</label>
+      <input type="textarea" name="comp" class="form-control" autocomplete="off" id="pTitle"
+        aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="pTitlef" class="form-label f">Enter Job Designation:</label>
+      <input type="textarea" name="desig" class="form-control" autocomplete="off" id="pTitle"
+        aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="pTitlef" class="form-label f">Enter Job Summary: (should be less than 30 words. This will be shown as preview)</label>
+      <textarea name="sum" maxlength="250" class="form-control" autocomplete="off" id="pTitle"
+      aria-describedby="emailHelp" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="pTitlef" class="form-label f">Enter Job Location:</label>
+      <input type="textarea" placeholder="New Delhi, Connaught Place" name="loc" class="form-control" autocomplete="off" id="pTitle"
+        aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+      <label for="pTitlef" class="form-label f">Enter Skills Required:</label>
+      <input type="textarea" placeholder="Write like - Java, Data Science, Python" name="skill" class="form-control" autocomplete="off" id="pTitle"
+        aria-describedby="emailHelp" required>
+    </div>
+    <button type="submit" class="btn btn-dark">Post</button>
+  </form>
+</div>
+{% endblock %}

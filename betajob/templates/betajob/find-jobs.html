@@ -1,0 +1,28 @@
+{% extends 'betajob/basic.html' %}
+{% block body %}
+<div class="container">
+    <h1 class="ff text-center">Find Jobs</h1>
+    <div class="d-flex justify-content-center">
+        <nav class="navbar bg-body">
+            <div class="container-fluid">
+                <form action="/search/" method="get" class="d-flex" role="search">
+                    <input class="form-control me-2" style="width: 50vw;" type="search" name="query" placeholder="Search designations, companies or skills!" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    {% for job in jobs %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4 class="card-title f fw-bold">{{ job.designation }}</h4>
+            <h6 class="card-title f fw-bold mb-3">{{ job.company }}</h6>
+            <p class="card-text f"><u>{{ job.summary }}</u></p>
+            <span class="card-text f fw-bold">Skills required</span>: {{ job.skills }}<br>
+            <span class="card-text f fw-bold">Location:</span> {{ job.location }}<br>
+            <span class="card-text f fw-bold">E-mail:</span> {{ job.email }}<br>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
